@@ -1,11 +1,21 @@
 {
-  "name": "u-com",
+  "name": "@chengzongxin/u-com",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "description": "A universal components for uniapp, weixin, douyin mini program",
+  "author": "8876142@qq.com",
+  "main": "lib/u-com.umd.min.js",
+  "files": [
+    "src",
+    "lib"
+  ],
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "build:com": "vue-cli-service build --target lib --dest lib/components --name u-com src/components/*.vue",
+    "build:docs": "vuepress build docs",
+    "build:lib": "vue-cli-service build --target lib src/lib.js --mode production"
   },
   "dependencies": {
     "core-js": "^3.8.3",
