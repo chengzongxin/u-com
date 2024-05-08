@@ -1,17 +1,19 @@
 export default class Platform {
-  constructor(platform) {
-    this.platform = platform ?? 'unkown';
+  constructor() {
+    this.platform = this.getPlatform();
+    this.env = process.env;
   }
 
-  destroy() {
-    this.platform = process.env.UNI_PLATFORM;
-  }
+  destroy() {}
 
-  date() {
-    return new Date();
-  }
-
-  getinfo() {
-    return process.env.UNI_PLATFORM ?? 'plat form fetch fail';
+  getPlatform() {
+    if (typeof uni !== 'undefined') {
+      return 'uni';
+    } else if (typeof wx !== 'undefined') {
+      return 'wechat-miniprogram';
+    } else if (typeof document !== 'undefined') {
+      return 'h5';
+    }
+    return 'unknown';
   }
 }

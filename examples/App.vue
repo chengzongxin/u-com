@@ -1,12 +1,13 @@
 <template>
   <div id="app">
+    <div>{{ JSON.stringify(info) }}</div>
     <p>----------------------</p>
-    <test-com type="success">{{ info.platform }}</test-com>
     <test-com type="success">hhhh</test-com>
     <test-com type="primary">hhhh</test-com>
     <test-com type="test">hhhh</test-com>
     <WarnSunBtn type="primary">123</WarnSunBtn>
     <WarnSunBtn type="success">456</WarnSunBtn>
+    <WarnSunBtn type="warn_sun_btn">789</WarnSunBtn>
   </div>
 </template>
 
@@ -15,8 +16,6 @@
 import { TestCom, WarnSunBtn, Platform } from '../src/lib';
 
 const platform = new Platform();
-
-// console.log('main.js Platform =', Platform);
 
 export default {
   name: 'App',
@@ -27,12 +26,11 @@ export default {
   data() {
     return {
       info: new Platform(),
-      date: platform.date(),
+      date: new Date(),
     };
   },
   mounted() {
     console.log(platform);
-    console.log(platform.getinfo());
   },
 };
 </script>
