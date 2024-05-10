@@ -1,5 +1,6 @@
 import * as components from './components';
 import * as utils from './utils';
+import * as appBridge from './utils/appBridge';
 
 // Declare install function executed by Vue.use()
 function install(Vue, opts) {
@@ -20,6 +21,7 @@ const plugin = {
   install,
   ...components,
   ...utils,
+  appBridge,
 };
 
 // Use automatically when global Vue instance detected
@@ -41,3 +43,5 @@ export * from './components';
 
 // Allow util use individually
 export * from './utils';
+
+export * from './utils/appBridge';

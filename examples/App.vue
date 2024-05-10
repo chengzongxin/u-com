@@ -14,7 +14,7 @@
 <script>
 // import { TestCom, WarnSunBtn } from '@/lib';
 import { TestCom, WarnSunBtn, Platform } from '../src/lib';
-
+// import AppBridge from '@/libs/appBridge';
 const platform = new Platform();
 
 export default {
@@ -31,6 +31,7 @@ export default {
   },
   mounted() {
     console.log(platform);
+    // console.log(AppBridge);
   },
 };
 </script>

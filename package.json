@@ -36,6 +36,16 @@
     "env": {
       "node": true
     },
+    "globals": {
+      "wx": true,
+      "swan": true,
+      "tt": true,
+      "my": true,
+      "uni": true,
+      "getCurrentPages": true,
+      "getApp": true,
+      "__wxConfig": true
+    },
     "extends": [
       "plugin:vue/essential",
       "eslint:recommended"
